@@ -1,0 +1,49 @@
+.loading button {
+  display: flex;
+  position: relative;
+  width: 350px;
+  height: 40px;
+  background-color: wheat;
+  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.loading-text {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.loading-text:hover {
+  cursor: pointer;
+}
+
+.loading-span {
+  position: absolute;
+  align-self: left;
+  height: 100%;
+  width: 50%;
+}
+
+.half-load {
+  background-color: greenyellow;
+  width: 50%;
+}
+
+.full-loaded {
+  width: 100%;
+  background-color: greenyellow;
+  box-shadow: 0 0 10px greenyellow; 
+  transition: box-shadow 1s ease-in-out; 
+}
+
+.full-loaded:hover {
+  opacity: 20%;
+  cursor: pointer;
+  box-shadow: 0 0 20px greenyellow;
+}

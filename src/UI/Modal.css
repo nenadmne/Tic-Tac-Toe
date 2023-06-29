@@ -1,0 +1,12 @@
+.backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    background-color: rgba(47, 79, 79, 0.80);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }

@@ -1,0 +1,55 @@
+.chat-wrapper {
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: rgba(255, 255, 255);
+
+    overflow-wrap: break-word;
+}
+
+.chat-wrapper input {
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 0;
+}
+
+.chat-wrapper button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: navajowhite;
+    color: black;
+}
+
+.chat-wrapper button:hover {
+    color: navajowhite;
+    background-color: black;
+}
+
+.chat-wrapper li {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 0.8rem;
+}
+
+.messageTime {
+    font-weight: bold;
+    font-style: italic;
+    margin-right: 8px;
+    white-space: nowrap;
+}

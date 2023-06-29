@@ -1,0 +1,127 @@
+.game-wrapper {
+  width: 350px;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-wrapper,
+.game-wrapper ul,
+.start,
+.disabled,
+.notification,
+.game-over{
+  display: flex;
+}
+
+.game-wrapper,
+.game-wrapper ul,
+.game-wrapper li,
+.game-over,
+.game-wrapper {
+  align-items: center;
+  justify-content: center;
+}
+
+.game-wrapper ul {
+  flex-wrap: wrap;
+  padding: 1rem 0 ;
+  gap: 12px;
+}
+
+.start,
+.disabled {
+  padding: 0; 
+  flex-basis: 30%;
+  list-style: none;
+  font-size: 2.2rem;
+  width: 74px;
+  height: 74px;
+}
+
+.start {
+  background-color: rgba(255, 0, 234, 0.26);
+}
+
+.start:hover {
+  cursor: pointer;
+}
+
+.start:hover,
+.disabled,
+.game-over {
+  background-color: blueviolet;
+}
+
+.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.disabled,
+.game-over {
+  color: white;
+}
+
+.game-over {
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  flex-direction: column;
+}
+
+.game-wrapper p {
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.game-wrapper span {
+  font-weight: bold;
+}
+
+.game-over p {
+  font-size: 1rem;
+}
+
+.game-over button {
+  margin-top: 0.5rem;
+}
+
+.game-over span {
+  font-size: 1.2rem;
+}
+
+.game-wrapper li {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.61);
+}
+
+.unused:hover {
+  background-color: rgba(255, 0, 234, 0.26) !important;
+  cursor: unset;
+}
+
+.notification {
+  height: 60px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notification span {
+  font-size: 1rem;
+}
+
+.notification h1 span {
+  font-size: 1.4rem;
+}
+
+.xSpan {
+  color: lightseagreen;
+}
+
+.oSpan {
+  color: brown;
+}

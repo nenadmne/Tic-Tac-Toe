@@ -1,0 +1,49 @@
+.newPlayerInput-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chosePlayer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 350px;
+  text-align: center;
+  background-color: wheat;
+  padding: 6%;
+}
+
+.chosePlayer h1 {
+  margin-bottom: 0.8rem;
+}
+
+.nameConfirmation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.nameConfirmation button {
+  width: 40%;
+  padding: 4%;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.61);
+  background-color: blueviolet;
+  font-size: 1rem;
+}
+
+.chosePlayer input {
+  margin-left: 0.5rem;
+}
+
+.nameConfirmation a{
+  color: white;
+  text-decoration: none;
+}

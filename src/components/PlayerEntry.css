@@ -1,0 +1,70 @@
+.player-wrapper {
+  margin-bottom: 2rem;
+}
+
+.player-wrapper main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  background-color: wheat;
+}
+
+.player-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  text-align: center;
+  padding: 5%;
+}
+
+li button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: blueviolet;
+  margin-bottom: 0.5rem;
+}
+
+li button:hover {
+  background-color: rgba(210, 105, 30, 0.603);
+  color: white;
+}
+
+.player {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  font-style: italic;
+}
+
+.playerName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.mark {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.player-information li {
+  width: 48%;
+  position: relative;
+  align-self: stretch;
+}
+
+.locked {
+  border-radius: 1rem;
+  background-color: tan;
+}
+
+.locked button {
+  pointer-events: none;
+  background-color: inherit;
+  color: white;
+  background-color: rgba(210, 105, 30, 0.603);
+}
