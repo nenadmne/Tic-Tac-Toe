@@ -32,13 +32,9 @@ const PlayerEntry = (props) => {
                     {player ? player.name : item.name}
                   </div>
                   <div className="mark"> {item.mark} </div>
-                  <Link to='/enter-name'>
-                    <button
-                      onClick={() => editButtonHandler(item.id, item.mark)}
-                    >
-                      Edit
-                    </button>
-                  </Link>
+                  <button className={lockedClass} onClick={() => editButtonHandler(item.id, item.mark)}>
+                    <Link to="/enter-name">Edit</Link>
+                  </button>
                 </li>
               );
             })}

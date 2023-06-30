@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Fragment } from "react";
 
 import NavigationBar from "./components/NavigationBar";
@@ -9,7 +9,7 @@ import Chat from "./components/Chat";
 import Game from "./components/Game";
 
 const App = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: (

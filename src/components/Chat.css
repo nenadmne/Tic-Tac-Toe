@@ -1,5 +1,5 @@
 .chat-wrapper {
-    width: 450px;
+    width: 350px;
     height: 300px;
     position: absolute;
     left: 1%;
@@ -53,3 +53,15 @@
     margin-right: 8px;
     white-space: nowrap;
 }
+
+@media(max-width: 800px) {
+
+    .chat-wrapper {
+        height: 200px;
+        position: absolute;
+        left: auto;
+        bottom: 0;
+        margin-bottom: 0.5rem;
+    }
+  
+  }

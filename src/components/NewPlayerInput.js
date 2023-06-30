@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const NewPlayerInput = () => {
   const gameCtx = useContext(GameContext);
   const { addNewPlayer, playerInfo } = gameCtx;
+  const [fail, setFail] = useState(false);
 
   const [enteredName, setEnteredName] = useState("");
 
@@ -19,8 +20,16 @@ const NewPlayerInput = () => {
   };
 
   const confirmHandler = () => {
-    addNewPlayer(enteredName, playerInfo[0].id, playerInfo[0].mark);
+    if (enteredName.length < 3) {
+      setFail(true);
+      return;
+    } else {
+      setFail(false);
+      addNewPlayer(enteredName, playerInfo[0].id, playerInfo[0].mark);
+    }
   };
+
+  const message = <p className="warning"> Please enter min value of 3 characters !</p>;
 
   return (
     <Card className="newPlayerInput-wrapper">
@@ -32,10 +41,10 @@ const NewPlayerInput = () => {
             type="text"
             onChange={onChangeHandler}
             value={enteredName}
-            minLength="3"
             maxLength="10"
             required
           />
+          {fail && message}
         </div>
         <footer className="nameConfirmation">
           <button type="button">
@@ -43,7 +52,11 @@ const NewPlayerInput = () => {
           </button>
 
           <button type="button" onClick={confirmHandler}>
-            <Link to="/">Confirm</Link>
+            {enteredName.length >= 3 ? (
+              <Link to="/">Confirm</Link>
+            ) : (
+              <span>Confirm</span>
+            )}
           </button>
         </footer>
       </form>

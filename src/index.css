@@ -52,7 +52,6 @@ button:hover {
 input {
   width: 50%;
   align-self: center;
-  margin-bottom: 5%;
   padding: 0.4rem;
 }
 
@@ -63,4 +62,16 @@ input:focus {
 
 h1 {
   font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media(max-width: 600px) {
+
+  html, body {
+    min-width: 375px;
+  }
+
 }

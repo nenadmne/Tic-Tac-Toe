@@ -68,3 +68,8 @@ li button:hover {
   color: white;
   background-color: rgba(210, 105, 30, 0.603);
 }
+
+
+a {
+  text-decoration: none;
+}
