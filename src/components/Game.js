@@ -14,20 +14,23 @@ const Game = () => {
   const gameCtx = useContext(GameContext);
   const { players } = gameCtx;
 
+
   const xPlayer = players.find((player) => player.mark === "X"); // definisanje X igrača
   const oPlayer = players.find((player) => player.mark === "O"); // definisanje O igrača
-  console.log(xPlayer);
-  console.log(oPlayer);
 
-  const xPlayerSpan = <span className="xSpan">{xPlayer.name}</span>; // Span za X igrača
-  const oPlayerSpan = <span className="oSpan">{oPlayer.name}</span>; // Span za O igrača
+  const xPlayerSpan = xPlayer ? (
+    <span className="xSpan">{xPlayer.name}</span>
+  ) : null;
+  const oPlayerSpan = oPlayer ? (
+    <span className="oSpan">{oPlayer.name}</span>
+  ) : null;
 
   const handleClick = (index) => {
-    console.log(gameCtx);
     // index dodijeljen svakom polju od 0 do 8 redom
     if (board[index] === "" && !winner) {
       // Ako je polje prazno (nije kliknuto još) i ako nema pobjednika
       const updatedBoard = [...board];
+      console.log(updatedBoard);
       updatedBoard[index] = currentPlayer === xPlayer.id ? "X" : "O"; // Definisanje znaka kliknutog polja, currentPlayer početni definisao useEffect
       setBoard(updatedBoard); // Updejtovanje table sa prethodno unijetim znakom
       checkWinner(updatedBoard); // Provjera updejtovane table
@@ -60,7 +63,6 @@ const Game = () => {
       setCurrentPlayer(xPlayer.id);
       setCurrentTurn([xPlayerSpan]);
     }
-
   }, [players]);
 
   const checkWinner = (board) => {
@@ -113,47 +115,56 @@ const Game = () => {
     );
 
   return (
-    <Card className="game-wrapper">
-      <div className="notification">
-        {header}
-        {!winner && !isDraw && <p>{currentTurn}'s turn!</p>}
-      </div>
-      <ul className="board">
-        {board.map((cell, index) => {
-          return (
-            <li
-              key={index}
-              className={`start ${cell ? "disabled" : ""} ${
-                winner && !cell ? "unused" : ""
-              }`}
-              onClick={() => handleClick(index)}
-            >
-              {cell === "X" ? "X" : cell === "O" ? "O" : ""}
-            </li>
-          );
-        })}
-      </ul>
-      {winner && (
-        <div className="game-over">
-          {winnerMessage}
-          <Link to="/">
-            <button onClick={resetGame}>Play Again</button>
-          </Link>
+      <Card className="game-wrapper">
+        <div className="notification">
+          {header}
+          {!winner && !isDraw && <p>{currentTurn}'s turn!</p>}
         </div>
-      )}
-      {!winner && isDraw && (
-        <div className="game-over">
-          <p>It's a draw!</p>
-          <Link to="/">
-            <button onClick={resetGame}>Play Again</button>
-          </Link>
-        </div>
-      )}
-    </Card>
+        <ul className="board">
+          {board.map((cell, index) => {
+            return (
+              <li
+                key={index}
+                className={`start ${cell ? "disabled" : ""} ${
+                  winner && !cell ? "unused" : ""
+                }`}
+                onClick={() => handleClick(index)}
+              >
+                {cell === "X" ? "X" : cell === "O" ? "O" : ""}
+              </li>
+            );
+          })}
+        </ul>
+        {winner && (
+          <div className="game-over">
+            {winnerMessage}
+            <Link to="/">
+              <button onClick={resetGame}>Play Again</button>
+            </Link>
+          </div>
+        )}
+        {!winner && isDraw && (
+          <div className="game-over">
+            <p>It's a draw!</p>
+            <Link to="/">
+              <button onClick={resetGame}>Play Again</button>
+            </Link>
+          </div>
+        )}
+      </Card>
   );
 };
 
 export default Game;
+
+// export const loader = async () => {
+//   const response = await fetch('http://localhost:3000/game');
+//   if (!response.ok || response.errorIndicator) {
+//     throw new Error('Error fetching data');
+//   } else {
+//     return response;
+//   }
+// };
 
 // const Game = (props) => {
 //   const [board, setBoard] = useState(Array(9).fill("")); // Array od 9 polja za prikaz table

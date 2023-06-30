@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Fragment } from "react";
+
 import NavigationBar from "./components/NavigationBar";
 import PlayerEntry from "./components/PlayerEntry";
 import BackDrop from "./UI/Modal";

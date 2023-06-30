@@ -27,7 +27,7 @@ const reducer = (state, action) => {
       ...state,
       players: [],
     };
-  }
+  } 
   return state;
 };
 

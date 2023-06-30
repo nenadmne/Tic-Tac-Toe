@@ -19,7 +19,7 @@ const GameContext = createContext({
   playerInfo: [],
   addNewPlayer: (item) => {},
   setPlayerInfo: (item)=>{},
-  resetPlayers: () => {}
+  resetPlayers: () => {},
 });
 
 export default GameContext;
