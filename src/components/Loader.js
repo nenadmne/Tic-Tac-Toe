@@ -15,7 +15,7 @@ const Loader = () => {
       ? "full-loaded"
       : "";
 
-  const message = players.length === 0 ? "Enter player 1 name!" : players.length === 1  ? "Enter player 2 name!" : 'Click to play!';
+  const message = players.length <1 ? "Enter player name!" : players.length === 1 ? "Enter second player name!" : 'Click to play!';
   const linking = players.length > 1 ? "/game" : "/";
 
   return (
